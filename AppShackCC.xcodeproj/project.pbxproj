@@ -14,6 +14,11 @@
 		42B40E982A17FE7D0066A296 /* AppShackCCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40E972A17FE7D0066A296 /* AppShackCCTests.swift */; };
 		42B40EA22A17FE7D0066A296 /* AppShackCCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EA12A17FE7D0066A296 /* AppShackCCUITests.swift */; };
 		42B40EA42A17FE7D0066A296 /* AppShackCCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EA32A17FE7D0066A296 /* AppShackCCUITestsLaunchTests.swift */; };
+		42B40EB22A17FEBE0066A296 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EB12A17FEBE0066A296 /* HomeScreen.swift */; };
+		42B40EB42A17FED10066A296 /* CodexScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EB32A17FED10066A296 /* CodexScreen.swift */; };
+		42B40EB62A17FEE80066A296 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EB52A17FEE80066A296 /* ProfileScreen.swift */; };
+		42B40EB92A1800470066A296 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EB82A1800470066A296 /* Network.swift */; };
+		42B40EBB2A18016A0066A296 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EBA2A18016A0066A296 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		42B40E9D2A17FE7D0066A296 /* AppShackCCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppShackCCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B40EA12A17FE7D0066A296 /* AppShackCCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShackCCUITests.swift; sourceTree = "<group>"; };
 		42B40EA32A17FE7D0066A296 /* AppShackCCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShackCCUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		42B40EB12A17FEBE0066A296 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		42B40EB32A17FED10066A296 /* CodexScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexScreen.swift; sourceTree = "<group>"; };
+		42B40EB52A17FEE80066A296 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		42B40EB82A1800470066A296 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		42B40EBA2A18016A0066A296 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,8 @@
 		42B40E852A17FE7C0066A296 /* AppShackCC */ = {
 			isa = PBXGroup;
 			children = (
+				42B40EB72A1800340066A296 /* Utils */,
+				42B40EB02A17FE980066A296 /* View */,
 				42B40E862A17FE7C0066A296 /* AppShackCCApp.swift */,
 				42B40E882A17FE7C0066A296 /* ContentView.swift */,
 				42B40E8A2A17FE7D0066A296 /* Assets.xcassets */,
@@ -125,6 +137,25 @@
 				42B40EA32A17FE7D0066A296 /* AppShackCCUITestsLaunchTests.swift */,
 			);
 			path = AppShackCCUITests;
+			sourceTree = "<group>";
+		};
+		42B40EB02A17FE980066A296 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42B40EB12A17FEBE0066A296 /* HomeScreen.swift */,
+				42B40EB32A17FED10066A296 /* CodexScreen.swift */,
+				42B40EB52A17FEE80066A296 /* ProfileScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42B40EB72A1800340066A296 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				42B40EB82A1800470066A296 /* Network.swift */,
+				42B40EBA2A18016A0066A296 /* Endpoints.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +290,11 @@
 			files = (
 				42B40E892A17FE7C0066A296 /* ContentView.swift in Sources */,
 				42B40E872A17FE7C0066A296 /* AppShackCCApp.swift in Sources */,
+				42B40EB92A1800470066A296 /* Network.swift in Sources */,
+				42B40EBB2A18016A0066A296 /* Endpoints.swift in Sources */,
+				42B40EB22A17FEBE0066A296 /* HomeScreen.swift in Sources */,
+				42B40EB42A17FED10066A296 /* CodexScreen.swift in Sources */,
+				42B40EB62A17FEE80066A296 /* ProfileScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
