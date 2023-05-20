@@ -15,6 +15,7 @@ class Network {
 
 //MARK: generic function for fetching data and decoding it
 enum DataFetchError: Error {
+    case badURL
     case requestFailed(Error)
     case decodingFailed(Error)
 }
@@ -22,8 +23,13 @@ enum DataFetchError: Error {
 func fetchData<T: Decodable>(from url: URL, responseType: T.Type) async throws -> T {
     let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
     let (data, response) = try await URLSession.shared.data(for: request)
-    guard let httpResponse = response as? HTTPURLResponse, 200...299 ~= httpResponse.statusCode else {
+    guard let httpResponse = response as? HTTPURLResponse else {
+        print(response)
         throw DataFetchError.requestFailed(NSError(domain: NSURLErrorDomain, code: NSURLErrorBadServerResponse))
+    }
+    guard 200...299 ~= httpResponse.statusCode else {
+        print(httpResponse)
+        throw DataFetchError.requestFailed(NSError(domain: NSURLErrorDomain, code: httpResponse.statusCode))
     }
     do {
         let decodedData = try JSONDecoder().decode(T.self, from: data)
@@ -35,10 +41,17 @@ func fetchData<T: Decodable>(from url: URL, responseType: T.Type) async throws -
 
 //MARK: The API calls
 extension Network {
-    func getPokemonCount() async throws -> Count {
-        let path = Endpoints.getCountOfPokemon.path
-        let url = baseURL.appending(path: path).appending(queryItems: [URLQueryItem(name: "limit", value: "1")])
-        return try await fetchData(from: url, responseType: Count.self)
+    func getAllPokemon() async throws -> PokedexResult {
+        let path = Endpoints.getAllPokemon.path
+        let url = baseURL.appending(path: path).appending(queryItems: [URLQueryItem(name: "limit", value: "10000")])
+        return try await fetchData(from: url, responseType: PokedexResult.self)
+    }
+    
+    func getPokemonByURL(url: String) async throws -> Pokemon {
+        guard let url = URL(string: url) else {
+            throw DataFetchError.badURL
+        }
+        return try await fetchData(from: url, responseType: Pokemon.self)
     }
     
     func getPokemonById(id: Int) async throws -> Pokemon {

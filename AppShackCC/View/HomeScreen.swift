@@ -41,18 +41,37 @@ struct HomeScreen: View {
     @ObservedObject var viewModel = ViewModel()
     var body: some View {
         VStack {
-            Text("Home Screen")
-            ImageView(pokeUrlString: viewModel.randomPokemon?.sprites.frontDefault)
-                .skeleton(with: viewModel.randomPokemon?.sprites.frontDefault == nil)
+            ImageView(pokeUrlString: viewModel.randomPokemon?.sprites?.frontDefault)
+                .skeleton(with: viewModel.randomPokemon?.sprites?.frontDefault == nil)
+                .shape(type: .rectangle)
                 .frame(width: 100, height: 100)
+                .cornerRadius(8)
+                .shadow(radius: 8)
+                .onTapGesture {
+                    viewModel.isShowingDetail = true
+                }
             Text(String(viewModel.isLoading))
             Text(viewModel.randomPokemon?.name ?? "None loaded")
         }
+        .toolbar(content: {
+            Button {
+                viewModel.resetPokemon()
+                viewModel.fetchRandomPokemon()
+            } label: {
+                Image(systemName: "arrow.clockwise")
+            }
+        })
+        .navigationDestination(isPresented: $viewModel.isShowingDetail) {
+            Text("Hello there!")
+        }
+        .navigationTitle("Home Screen")
     }
 }
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        NavigationStack {
+            HomeScreen()
+        }
     }
 }

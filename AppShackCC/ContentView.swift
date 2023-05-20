@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            HomeScreen()
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
+            NavigationStack {
+                HomeScreen()
+            }
+            .tabItem {
+                Label("Home", systemImage: "house.fill")
+            }
             CodexScreen()
                 .tabItem {
                     Label("Codex", systemImage: "books.vertical.fill")

@@ -10,22 +10,30 @@ import Foundation
 extension HomeScreen {
     @MainActor
     class ViewModel: ObservableObject {
-        @Published var isLoading: Bool = true
+        @Published private(set) var randomPokemon: Pokemon?
         
-        @Published var randomPokemon: Pokemon?
+        @Published var isShowingDetail = false
+        
+        var isLoading: Bool {
+            randomPokemon == nil
+        }
         
         func fetchRandomPokemon() -> Void {
-            isLoading = true
             Task {
                 do {
-                    let count = try await Network.shared.getPokemonCount().count
-                    let randomPokemonId = Int.random(in: 1...count)
-                    randomPokemon = try await Network.shared.getPokemonById(id: randomPokemonId)
-                    isLoading = false
+                    let res = try await Network.shared.getAllPokemon()
+                    guard let url = res.results.randomElement()?.url else {
+                        return
+                    }
+                    randomPokemon = try await Network.shared.getPokemonByURL(url: url)
                 } catch {
-                    print("Error for sentry")
+                    print(error.localizedDescription)
                 }
             }
+        }
+        
+        func resetPokemon() -> Void {
+            randomPokemon = nil
         }
         
         init() {
