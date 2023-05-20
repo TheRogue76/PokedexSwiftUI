@@ -46,14 +46,4 @@ extension Network {
         let url = baseURL.appending(path: path)
         return try await fetchData(from: url, responseType: Pokemon.self)
     }
-    
-    func getRandomPokemon() async throws -> Pokemon {
-        let count = try await getPokemonCount().count
-        let randomPokemonId = Int.random(in: 1...count)
-        return try await getPokemonById(id: randomPokemonId)
-    }
-    
-//    func fetchAllPokemon() async throws {
-//        let path = Endpoints.fetchAllPokemon.path
-//    }
 }

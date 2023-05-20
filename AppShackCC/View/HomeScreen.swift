@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @ObservedObject var viewModel = ViewModel()
     var body: some View {
-        Text("Home Screen")
+        VStack {
+            Text("Home Screen")
+            Text(viewModel.randomPokemon?.name ?? "None loaded")
+        }
+        .onAppear {
+            viewModel.fetchRandomPokemon()
+        }
     }
 }
 

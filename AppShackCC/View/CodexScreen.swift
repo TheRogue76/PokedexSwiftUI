@@ -10,14 +10,6 @@ import SwiftUI
 struct CodexScreen: View {
     var body: some View {
         Text("Codex Screen")
-            .task {
-                do {
-                    let data = try await Network.shared.getRandomPokemon()
-                    print(data)
-                } catch {
-                    print(String(describing: error))
-                }
-            }
     }
 }
 

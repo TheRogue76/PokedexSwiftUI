@@ -21,6 +21,7 @@
 		42B40EBB2A18016A0066A296 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EBA2A18016A0066A296 /* Endpoints.swift */; };
 		42B40EBE2A18E5940066A296 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EBD2A18E5940066A296 /* Pokemon.swift */; };
 		42B40EC02A18E7380066A296 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EBF2A18E7380066A296 /* Count.swift */; };
+		42B40EC32A1901BD0066A296 /* HomeScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EC22A1901BD0066A296 /* HomeScreen+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		42B40EBA2A18016A0066A296 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		42B40EBD2A18E5940066A296 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		42B40EBF2A18E7380066A296 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		42B40EC22A1901BD0066A296 /* HomeScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeScreen+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		42B40E852A17FE7C0066A296 /* AppShackCC */ = {
 			isa = PBXGroup;
 			children = (
+				42B40EC12A1901950066A296 /* ViewModel */,
 				42B40EBC2A18E57F0066A296 /* Model */,
 				42B40EB72A1800340066A296 /* Utils */,
 				42B40EB02A17FE980066A296 /* View */,
@@ -170,6 +173,14 @@
 				42B40EBF2A18E7380066A296 /* Count.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		42B40EC12A1901950066A296 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42B40EC22A1901BD0066A296 /* HomeScreen+ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 				42B40EB22A17FEBE0066A296 /* HomeScreen.swift in Sources */,
 				42B40EB42A17FED10066A296 /* CodexScreen.swift in Sources */,
 				42B40EB62A17FEE80066A296 /* ProfileScreen.swift in Sources */,
+				42B40EC32A1901BD0066A296 /* HomeScreen+ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
