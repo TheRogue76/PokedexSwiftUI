@@ -18,6 +18,10 @@ extension HomeScreen {
             randomPokemon == nil
         }
         
+        var title: String {
+            isLoading ? "A new Pokemon is about to appear!" : "A new Pokemon has appeared!"
+        }
+        
         func fetchRandomPokemon() -> Void {
             Task {
                 do {

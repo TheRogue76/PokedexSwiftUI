@@ -41,17 +41,21 @@ struct HomeScreen: View {
     @ObservedObject var viewModel = ViewModel()
     var body: some View {
         VStack {
+            Text(viewModel.title)
+            if !viewModel.isLoading {
+                Text("Click on it to learn more!")
+            }
             ImageView(pokeUrlString: viewModel.randomPokemon?.sprites?.frontDefault)
                 .skeleton(with: viewModel.randomPokemon?.sprites?.frontDefault == nil)
                 .shape(type: .rectangle)
-                .frame(width: 100, height: 100)
+                .frame(width: 200, height: 200)
                 .cornerRadius(8)
                 .shadow(radius: 8)
                 .onTapGesture {
                     viewModel.isShowingDetail = true
                 }
-            Text(String(viewModel.isLoading))
-            Text(viewModel.randomPokemon?.name ?? "None loaded")
+            Text(viewModel.randomPokemon?.name.capitalized ?? "Loading")
+                
         }
         .toolbar(content: {
             Button {
