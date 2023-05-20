@@ -27,5 +27,9 @@ extension HomeScreen {
                 }
             }
         }
+        
+        init() {
+            fetchRandomPokemon()
+        }
     }
 }

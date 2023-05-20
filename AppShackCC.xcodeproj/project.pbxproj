@@ -22,6 +22,7 @@
 		42B40EBE2A18E5940066A296 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EBD2A18E5940066A296 /* Pokemon.swift */; };
 		42B40EC02A18E7380066A296 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EBF2A18E7380066A296 /* Count.swift */; };
 		42B40EC32A1901BD0066A296 /* HomeScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EC22A1901BD0066A296 /* HomeScreen+ViewModel.swift */; };
+		42B40EC62A19224A0066A296 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 42B40EC52A19224A0066A296 /* SkeletonUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B40EC62A19224A0066A296 /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +201,9 @@
 			dependencies = (
 			);
 			name = AppShackCC;
+			packageProductDependencies = (
+				42B40EC52A19224A0066A296 /* SkeletonUI */,
+			);
 			productName = AppShackCC;
 			productReference = 42B40E832A17FE7C0066A296 /* AppShackCC.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 42B40E7A2A17FE7C0066A296;
+			packageReferences = (
+				42B40EC42A1922490066A296 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+			);
 			productRefGroup = 42B40E842A17FE7C0066A296 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -647,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42B40EC42A1922490066A296 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42B40EC52A19224A0066A296 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42B40EC42A1922490066A296 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42B40E7B2A17FE7C0066A296 /* Project object */;
 }
