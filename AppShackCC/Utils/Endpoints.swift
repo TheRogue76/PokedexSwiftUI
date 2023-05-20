@@ -8,12 +8,18 @@
 import Foundation
 
 enum Endpoints {
-    case fetchAllPokemon
+    case getCountOfPokemon
+    case getAllPokemon
+    case getPokemonById(Int)
     
     var path: String {
         switch self {
-        case .fetchAllPokemon:
+        case .getCountOfPokemon:
             return "/pokemon"
+        case .getAllPokemon:
+            return "/pokemon"
+        case .getPokemonById(let id):
+            return "/pokemon/\(id)"
         }
     }
     
