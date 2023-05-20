@@ -25,6 +25,7 @@
 		42B40ECA2A192F280066A296 /* PokemonDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40EC92A192F280066A296 /* PokemonDetailScreen.swift */; };
 		42B40ECC2A1939AE0066A296 /* PokedexResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40ECB2A1939AE0066A296 /* PokedexResult.swift */; };
 		42B40ECE2A193A080066A296 /* BaseNameURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40ECD2A193A080066A296 /* BaseNameURL.swift */; };
+		42B40ED02A193FE30066A296 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40ECF2A193FE30066A296 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		42B40EC92A192F280066A296 /* PokemonDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailScreen.swift; sourceTree = "<group>"; };
 		42B40ECB2A1939AE0066A296 /* PokedexResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexResult.swift; sourceTree = "<group>"; };
 		42B40ECD2A193A080066A296 /* BaseNameURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNameURL.swift; sourceTree = "<group>"; };
+		42B40ECF2A193FE30066A296 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				42B40EB32A17FED10066A296 /* CodexScreen.swift */,
 				42B40EB52A17FEE80066A296 /* ProfileScreen.swift */,
 				42B40EC92A192F280066A296 /* PokemonDetailScreen.swift */,
+				42B40ECF2A193FE30066A296 /* ImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				42B40EBE2A18E5940066A296 /* Pokemon.swift in Sources */,
 				42B40E872A17FE7C0066A296 /* AppShackCCApp.swift in Sources */,
 				42B40ECE2A193A080066A296 /* BaseNameURL.swift in Sources */,
+				42B40ED02A193FE30066A296 /* ImageView.swift in Sources */,
 				42B40EB92A1800470066A296 /* Network.swift in Sources */,
 				42B40EBB2A18016A0066A296 /* Endpoints.swift in Sources */,
 				42B40EB22A17FEBE0066A296 /* HomeScreen.swift in Sources */,
