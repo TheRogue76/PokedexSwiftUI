@@ -13,8 +13,10 @@ struct HomeScreen: View {
     var body: some View {
         VStack {
             Text(viewModel.title)
+                .font(.title2)
             if !viewModel.isLoading {
                 Text("Click on it to learn more!")
+                    .font(.title3)
             }
             ImageView(pokeUrlString: viewModel.randomPokemon?.sprites.frontDefault)
                 .skeleton(with: viewModel.randomPokemon?.sprites.frontDefault == nil)
@@ -26,6 +28,7 @@ struct HomeScreen: View {
                     viewModel.isShowingDetail = true
                 }
             Text(viewModel.randomPokemon?.name.capitalized ?? "Loading")
+                .font(.title)
                 
         }
         .toolbar(content: {

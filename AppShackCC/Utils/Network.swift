@@ -47,7 +47,7 @@ extension Network {
         return try await fetchData(from: url, responseType: PokedexResult.self)
     }
     
-    func getPokemonByURL(url: String) async throws -> Pokemon {
+    func getPokemonByUrl(url: String) async throws -> Pokemon {
         guard let url = URL(string: url) else {
             throw DataFetchError.badURL
         }
@@ -58,5 +58,19 @@ extension Network {
         let path = Endpoints.getPokemonById(id).path
         let url = baseURL.appending(path: path)
         return try await fetchData(from: url, responseType: Pokemon.self)
+    }
+    
+    func getPokemonSpeciesByUrl(url: String) async throws -> PokemonSpecies {
+        guard let url = URL(string: url) else {
+            throw DataFetchError.badURL
+        }
+        return try await fetchData(from: url, responseType: PokemonSpecies.self)
+    }
+    
+    func getEvolutionByUrl(url: String) async throws -> Evolution {
+        guard let url = URL(string: url) else {
+            throw DataFetchError.badURL
+        }
+        return try await fetchData(from: url, responseType: Evolution.self)
     }
 }

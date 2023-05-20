@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokedexResult: Decodable {
+struct PokedexResult: Codable {
     let count: Int
     let results: [BaseNameURL]
 }

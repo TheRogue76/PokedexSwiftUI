@@ -8,30 +8,42 @@
 import SwiftUI
 
 struct PokemonDetailScreen: View {
-    var pokemon: Pokemon
+    @ObservedObject var viewModel: ViewModel
+    init(pokemon: Pokemon) {
+        self.viewModel = ViewModel(pokemon: pokemon)
+    }
     
     var body: some View {
         VStack {
-            ImageView(pokeUrlString: pokemon.sprites.frontDefault)
+            ImageView(pokeUrlString: viewModel.pokemon.sprites.frontDefault)
                 .frame(height: 200)
             Form {
                 Section {
-                    Text("Name: \(pokemon.name)")
-                    Text("Height: \(pokemon.height)")
-                    Text("Weight: \(pokemon.weight)")
+                    Text("Name: \(viewModel.pokemon.name)")
+                    Text("Height: \(viewModel.pokemon.height)")
+                    Text("Weight: \(viewModel.pokemon.weight)")
                 } header: {
                     Text("Core properties")
                 }
                 Section {
-                    ForEach(pokemon.abilities, id: \.ability?.name) { ability in
-                        Text(ability.ability?.name?.capitalized ?? "None")
+                    ForEach(viewModel.pokemon.abilities, id: \.ability?.name) { ability in
+                        Text(ability.ability?.name.capitalized ?? "None")
                     }
                 } header: {
                     Text("Abilities")
                 }
+                if let evolutions = viewModel.evolution?.chain.evolvesTo, !evolutions.isEmpty {
+                    Section {
+                        ForEach(evolutions, id: \.species.name) { evolution in
+                            Text(evolution.species.name.capitalized)
+                        }
+                    } header: {
+                        Text("Can evolve to:")
+                    }
+                }
             }
         }
-        .navigationTitle(pokemon.name.capitalized)
+        .navigationTitle(viewModel.pokemon.name.capitalized)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

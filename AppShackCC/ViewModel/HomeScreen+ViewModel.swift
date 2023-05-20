@@ -29,7 +29,7 @@ extension HomeScreen {
                     guard let url = res.results.randomElement()?.url else {
                         return
                     }
-                    randomPokemon = try await Network.shared.getPokemonByURL(url: url)
+                    randomPokemon = try await Network.shared.getPokemonByUrl(url: url)
                 } catch {
                     print(error.localizedDescription)
                 }
