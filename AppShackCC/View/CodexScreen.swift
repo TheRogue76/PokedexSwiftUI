@@ -6,38 +6,42 @@
 //
 
 import SwiftUI
+import SkeletonUI
 
 struct CodexScreen: View {
     @ObservedObject var viewModel = ViewModel()
     
     var body: some View {
-        Group {
-            if viewModel.isLoading {
-                VStack {
-                    Text("Loading Data")
-                    ProgressView()
-                }
-            } else {
-                Form {
-                    List {
-                        ForEach(viewModel.filteredListOfPokemon, id: \.name) { pokemon in
-                            Button {
-                                viewModel.fetchPokemonByUrlAndSetSelected(url: pokemon.url)
-                            } label: {
-                                HStack {
-                                    Text(pokemon.name.capitalized)
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                }
-                                .foregroundColor(.primary)
+        Form {
+            List {
+                if viewModel.filteredListOfPokemon.isEmpty {
+                    if viewModel.isLoading {
+                        ForEach(1..<20, id: \.self) { _ in
+                            Text("")
+                                .skeleton(with: true)
+                                .shape(type: .rounded(.radius(8, style: .continuous)))
+                        }
+                    } else {
+                        Text("No results found")
+                    }
+                } else {
+                    ForEach(viewModel.filteredListOfPokemon, id: \.name) { pokemon in
+                        Button {
+                            viewModel.fetchPokemonByUrlAndSetSelected(url: pokemon.url)
+                        } label: {
+                            HStack {
+                                Text(pokemon.name.capitalized)
+                                Spacer()
+                                Image(systemName: "chevron.right")
                             }
+                            .foregroundColor(.primary)
                         }
                     }
                 }
-                .searchable(text: $viewModel.searchableText)
-                .autocorrectionDisabled(false)
             }
         }
+        .searchable(text: $viewModel.searchableText)
+        .autocorrectionDisabled(false)
         .navigationTitle("The Codex")
         .navigationDestination(isPresented: $viewModel.isShowingDetail) {
             PokemonDetailScreen(pokemon: viewModel.selectedPokemon)
