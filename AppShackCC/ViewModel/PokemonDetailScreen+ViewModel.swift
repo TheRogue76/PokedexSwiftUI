@@ -10,13 +10,7 @@ import Foundation
 extension PokemonDetailScreen {
     @MainActor
     class ViewModel: ObservableObject {
-        @Published var pokemon: Pokemon? {
-            didSet {
-                if pokemon != nil {
-                    fetchEvolution()
-                }
-            }
-        }
+        @Published var pokemon: Pokemon?
         
         @Published var evolution: Evolution?
         
@@ -61,6 +55,7 @@ extension PokemonDetailScreen {
             } else {
                 bookmarkedPokemonNames = []
             }
+            fetchEvolution()
         }
         
     }
