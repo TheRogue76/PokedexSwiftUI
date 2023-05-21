@@ -12,6 +12,8 @@ extension ProfileScreen {
     class ViewModel: ObservableObject {
         @Published private(set) var listOfAllPokemon: [BaseNameURL]? = nil
         
+        @Published var bookmarkedPokemonNames: [String] = []
+        
         @Published var selectedPokemon: Pokemon?
         
         @Published var isShowingDetail: Bool = false {
@@ -20,6 +22,17 @@ extension ProfileScreen {
                     selectedPokemon = nil
                 }
             }
+        }
+        
+        var isLoading: Bool {
+            listOfAllPokemon == nil
+        }
+        
+        var bookmarkedPokemon: [BaseNameURL] {
+            guard let listOfAllPokemon else {
+                return []
+            }
+            return listOfAllPokemon.filter { bookmarkedPokemonNames.contains($0.name) }
         }
         
         func fetchAllPokemon() -> Void {
@@ -43,7 +56,16 @@ extension ProfileScreen {
             }
         }
         
+        func refetchBookmarks() -> Void {
+            guard let bookmarks = UserDefaults.standard.array(forKey: bookmarksStorageKey) as? [String] else {
+                bookmarkedPokemonNames = []
+                return
+            }
+            bookmarkedPokemonNames = bookmarks
+        }
+        
         init() {
+            refetchBookmarks()
             fetchAllPokemon()
         }
     }
