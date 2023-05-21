@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		427A25FA2A1A166E00ED3C36 /* CodexScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */; };
 		427A25FC2A1A181E00ED3C36 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */; };
+		427A26012A1A420300ED3C36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A26002A1A420300ED3C36 /* Constants.swift */; };
 		42B40E872A17FE7C0066A296 /* AppShackCCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40E862A17FE7C0066A296 /* AppShackCCApp.swift */; };
 		42B40E892A17FE7C0066A296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40E882A17FE7C0066A296 /* ContentView.swift */; };
 		42B40E8B2A17FE7D0066A296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B40E8A2A17FE7D0066A296 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodexScreen+ViewModel.swift"; sourceTree = "<group>"; };
 		427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		427A25FD2A1A235E00ED3C36 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		427A26002A1A420300ED3C36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42B40E832A17FE7C0066A296 /* AppShackCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppShackCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B40E862A17FE7C0066A296 /* AppShackCCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShackCCApp.swift; sourceTree = "<group>"; };
 		42B40E882A17FE7C0066A296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */,
 				42B40EB82A1800470066A296 /* Network.swift */,
 				42B40EBA2A18016A0066A296 /* Endpoints.swift */,
+				427A26002A1A420300ED3C36 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B40E892A17FE7C0066A296 /* ContentView.swift in Sources */,
+				427A26012A1A420300ED3C36 /* Constants.swift in Sources */,
 				42B40EBE2A18E5940066A296 /* Pokemon.swift in Sources */,
 				42B40E872A17FE7C0066A296 /* AppShackCCApp.swift in Sources */,
 				42BCD7AA2A1965B80065C3F0 /* PokemonSpecies.swift in Sources */,

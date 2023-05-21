@@ -20,6 +20,15 @@ extension PokemonDetailScreen {
         
         @Published var evolution: Evolution?
         
+        @Published var bookmarkedPokemon: [String] = []
+        
+        var isBookmarked: Bool {
+            guard let pokemon else {
+                return false
+            }
+            return bookmarkedPokemon.contains(pokemon.name)
+        }
+        
         func fetchEvolution() -> Void {
             guard let pokemon else {
                 return
@@ -34,8 +43,22 @@ extension PokemonDetailScreen {
             }
         }
         
+        func bookmarkToggle() -> Void {
+            guard let pokemon else { return }
+            if isBookmarked {
+                guard let index = bookmarkedPokemon.firstIndex(of: pokemon.name) else { return }
+                bookmarkedPokemon.remove(at: index)
+            } else {
+                bookmarkedPokemon.append(pokemon.name)
+            }
+            UserDefaults.standard.set(bookmarkedPokemon, forKey: bookmarksStorageKey)
+        }
+        
         init(pokemon: Pokemon?) {
             self.pokemon = pokemon
+            if let bookmarks = UserDefaults.standard.array(forKey: bookmarksStorageKey) as? [String] {
+                bookmarkedPokemon = bookmarks
+            }
         }
         
     }

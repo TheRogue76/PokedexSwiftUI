@@ -25,7 +25,7 @@ struct CodexScreen: View {
                                 viewModel.fetchPokemonByUrlAndSetSelected(url: pokemon.url)
                             } label: {
                                 HStack {
-                                    Text(pokemon.name)
+                                    Text(pokemon.name.capitalized)
                                     Spacer()
                                     Image(systemName: "chevron.right")
                                 }

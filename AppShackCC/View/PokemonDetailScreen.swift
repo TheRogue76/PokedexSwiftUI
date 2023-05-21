@@ -57,6 +57,14 @@ struct PokemonDetailScreen: View {
                 }
             }
         }
+        .toolbar(content: {
+            Button {
+                viewModel.bookmarkToggle()
+            } label: {
+                Image(systemName: viewModel.isBookmarked ? "bookmark.fill" : "bookmark")
+            }
+
+        })
         .navigationTitle(viewModel.pokemon?.name.capitalized ?? "Loading")
         .navigationBarTitleDisplayMode(.inline)
     }
