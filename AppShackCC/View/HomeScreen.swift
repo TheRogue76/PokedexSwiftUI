@@ -50,8 +50,6 @@ struct HomeScreen: View {
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            HomeScreen()
-        }
+        HomeNavigationStack()
     }
 }

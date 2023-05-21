@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422040D92A1A49740039FE17 /* ProfileScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422040D82A1A49740039FE17 /* ProfileScreen+ViewModel.swift */; };
+		422040DC2A1A4A7C0039FE17 /* HomeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422040DB2A1A4A7C0039FE17 /* HomeNavigationStack.swift */; };
+		422040DE2A1A4ACA0039FE17 /* CodexNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422040DD2A1A4ACA0039FE17 /* CodexNavigationStack.swift */; };
+		422040E02A1A4B070039FE17 /* ProfileNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422040DF2A1A4B070039FE17 /* ProfileNavigationStack.swift */; };
 		427A25FA2A1A166E00ED3C36 /* CodexScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */; };
 		427A25FC2A1A181E00ED3C36 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */; };
 		427A26012A1A420300ED3C36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A26002A1A420300ED3C36 /* Constants.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		422040D82A1A49740039FE17 /* ProfileScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileScreen+ViewModel.swift"; sourceTree = "<group>"; };
+		422040DB2A1A4A7C0039FE17 /* HomeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStack.swift; sourceTree = "<group>"; };
+		422040DD2A1A4ACA0039FE17 /* CodexNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexNavigationStack.swift; sourceTree = "<group>"; };
+		422040DF2A1A4B070039FE17 /* ProfileNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationStack.swift; sourceTree = "<group>"; };
 		427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodexScreen+ViewModel.swift"; sourceTree = "<group>"; };
 		427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		427A25FD2A1A235E00ED3C36 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
@@ -108,6 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422040DA2A1A4A600039FE17 /* NavigationContainer */ = {
+			isa = PBXGroup;
+			children = (
+				422040DB2A1A4A7C0039FE17 /* HomeNavigationStack.swift */,
+				422040DD2A1A4ACA0039FE17 /* CodexNavigationStack.swift */,
+				422040DF2A1A4B070039FE17 /* ProfileNavigationStack.swift */,
+			);
+			path = NavigationContainer;
+			sourceTree = "<group>";
+		};
 		42B40E7A2A17FE7C0066A296 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +150,7 @@
 		42B40E852A17FE7C0066A296 /* AppShackCC */ = {
 			isa = PBXGroup;
 			children = (
+				422040DA2A1A4A600039FE17 /* NavigationContainer */,
 				42B40EC12A1901950066A296 /* ViewModel */,
 				42B40EBC2A18E57F0066A296 /* Model */,
 				42B40EB72A1800340066A296 /* Utils */,
@@ -210,6 +229,7 @@
 				42B40EC22A1901BD0066A296 /* HomeScreen+ViewModel.swift */,
 				42BCD7A72A19557A0065C3F0 /* PokemonDetailScreen+ViewModel.swift */,
 				427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */,
+				422040D82A1A49740039FE17 /* ProfileScreen+ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -356,12 +376,16 @@
 				42B40E872A17FE7C0066A296 /* AppShackCCApp.swift in Sources */,
 				42BCD7AA2A1965B80065C3F0 /* PokemonSpecies.swift in Sources */,
 				42B40ECE2A193A080066A296 /* BaseNameURL.swift in Sources */,
+				422040DC2A1A4A7C0039FE17 /* HomeNavigationStack.swift in Sources */,
 				42B40ED02A193FE30066A296 /* ImageView.swift in Sources */,
 				42B40EB92A1800470066A296 /* Network.swift in Sources */,
 				42B40EBB2A18016A0066A296 /* Endpoints.swift in Sources */,
 				42B40EB22A17FEBE0066A296 /* HomeScreen.swift in Sources */,
+				422040E02A1A4B070039FE17 /* ProfileNavigationStack.swift in Sources */,
 				42B40ECC2A1939AE0066A296 /* PokedexResult.swift in Sources */,
+				422040DE2A1A4ACA0039FE17 /* CodexNavigationStack.swift in Sources */,
 				42BCD7A82A19557A0065C3F0 /* PokemonDetailScreen+ViewModel.swift in Sources */,
+				422040D92A1A49740039FE17 /* ProfileScreen+ViewModel.swift in Sources */,
 				42B40EB42A17FED10066A296 /* CodexScreen.swift in Sources */,
 				427A25FA2A1A166E00ED3C36 /* CodexScreen+ViewModel.swift in Sources */,
 				42B40EB62A17FEE80066A296 /* ProfileScreen.swift in Sources */,

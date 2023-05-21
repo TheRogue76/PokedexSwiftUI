@@ -47,8 +47,6 @@ struct CodexScreen: View {
 
 struct CodexScreen_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            CodexScreen()
-        }
+        CodexNavigationStack()
     }
 }
