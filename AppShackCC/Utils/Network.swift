@@ -24,11 +24,9 @@ func fetchData<T: Decodable>(from url: URL, responseType: T.Type) async throws -
     let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
     let (data, response) = try await URLSession.shared.data(for: request)
     guard let httpResponse = response as? HTTPURLResponse else {
-        print(response)
         throw DataFetchError.requestFailed(NSError(domain: NSURLErrorDomain, code: NSURLErrorBadServerResponse))
     }
     guard 200...299 ~= httpResponse.statusCode else {
-        print(httpResponse)
         throw DataFetchError.requestFailed(NSError(domain: NSURLErrorDomain, code: httpResponse.statusCode))
     }
     do {

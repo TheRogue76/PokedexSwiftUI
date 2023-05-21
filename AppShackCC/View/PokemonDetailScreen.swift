@@ -6,27 +6,41 @@
 //
 
 import SwiftUI
+import SkeletonUI
 
 struct PokemonDetailScreen: View {
     @ObservedObject var viewModel: ViewModel
-    init(pokemon: Pokemon) {
+    init(pokemon: Pokemon?) {
         self.viewModel = ViewModel(pokemon: pokemon)
     }
     
     var body: some View {
         VStack {
-            ImageView(pokeUrlString: viewModel.pokemon.sprites.frontDefault)
-                .frame(height: 200)
+            ImageView(pokeUrlString: viewModel.pokemon?.sprites.frontDefault)
+                .skeleton(with: viewModel.pokemon == nil)
+                .shape(type: .rectangle)
+                .frame(width: 200, height: 200)
+                .cornerRadius(8)
+                .shadow(radius: 8)
             Form {
                 Section {
-                    Text("Name: \(viewModel.pokemon.name)")
-                    Text("Height: \(viewModel.pokemon.height)")
-                    Text("Weight: \(viewModel.pokemon.weight)")
+                    if let pokemon = viewModel.pokemon {
+                        Text("Name: \(pokemon.name)")
+                        Text("Height: \(pokemon.height)")
+                        Text("Weight: \(pokemon.weight)")
+                    } else {
+                        Rectangle()
+                            .skeleton(with: true)
+                        Rectangle()
+                            .skeleton(with: true)
+                        Rectangle()
+                            .skeleton(with: true)
+                    }
                 } header: {
                     Text("Core properties")
                 }
                 Section {
-                    ForEach(viewModel.pokemon.abilities, id: \.ability?.name) { ability in
+                    ForEach(viewModel.pokemon?.abilities ?? [], id: \.ability?.name) { ability in
                         Text(ability.ability?.name.capitalized ?? "None")
                     }
                 } header: {
@@ -43,7 +57,7 @@ struct PokemonDetailScreen: View {
                 }
             }
         }
-        .navigationTitle(viewModel.pokemon.name.capitalized)
+        .navigationTitle(viewModel.pokemon?.name.capitalized ?? "Loading")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

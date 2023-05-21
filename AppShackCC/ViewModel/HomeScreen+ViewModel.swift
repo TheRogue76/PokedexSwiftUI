@@ -31,7 +31,7 @@ extension HomeScreen {
                     }
                     randomPokemon = try await Network.shared.getPokemonByUrl(url: url)
                 } catch {
-                    print(error.localizedDescription)
+                    logError(error)
                 }
             }
         }

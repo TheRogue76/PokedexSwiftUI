@@ -10,24 +10,33 @@ import Foundation
 extension PokemonDetailScreen {
     @MainActor
     class ViewModel: ObservableObject {
-        @Published var pokemon: Pokemon
+        @Published var pokemon: Pokemon? {
+            didSet {
+                if pokemon != nil {
+                    fetchEvolution()
+                }
+            }
+        }
         
         @Published var evolution: Evolution?
         
-        init(pokemon: Pokemon) {
-            self.pokemon = pokemon
-            fetchEvolution()
-        }
-        
         func fetchEvolution() -> Void {
+            guard let pokemon else {
+                return
+            }
             Task {
                 do {
                     let species = try await Network.shared.getPokemonSpeciesByUrl(url: pokemon.species.url)
                     evolution = try await Network.shared.getEvolutionByUrl(url: species.EvolutionChain.url)
                 } catch {
-                    print(error.localizedDescription)
+                    logError(error)
                 }
             }
         }
+        
+        init(pokemon: Pokemon?) {
+            self.pokemon = pokemon
+        }
+        
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427A25FA2A1A166E00ED3C36 /* CodexScreen+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */; };
+		427A25FC2A1A181E00ED3C36 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */; };
 		42B40E872A17FE7C0066A296 /* AppShackCCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40E862A17FE7C0066A296 /* AppShackCCApp.swift */; };
 		42B40E892A17FE7C0066A296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B40E882A17FE7C0066A296 /* ContentView.swift */; };
 		42B40E8B2A17FE7D0066A296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B40E8A2A17FE7D0066A296 /* Assets.xcassets */; };
@@ -49,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodexScreen+ViewModel.swift"; sourceTree = "<group>"; };
+		427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		427A25FD2A1A235E00ED3C36 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		42B40E832A17FE7C0066A296 /* AppShackCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppShackCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B40E862A17FE7C0066A296 /* AppShackCCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShackCCApp.swift; sourceTree = "<group>"; };
 		42B40E882A17FE7C0066A296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 		42B40E7A2A17FE7C0066A296 = {
 			isa = PBXGroup;
 			children = (
+				427A25FD2A1A235E00ED3C36 /* ReadMe.md */,
 				42B40E852A17FE7C0066A296 /* AppShackCC */,
 				42B40E962A17FE7D0066A296 /* AppShackCCTests */,
 				42B40EA02A17FE7D0066A296 /* AppShackCCUITests */,
@@ -176,6 +182,7 @@
 		42B40EB72A1800340066A296 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				427A25FB2A1A181E00ED3C36 /* ErrorHandler.swift */,
 				42B40EB82A1800470066A296 /* Network.swift */,
 				42B40EBA2A18016A0066A296 /* Endpoints.swift */,
 			);
@@ -199,6 +206,7 @@
 			children = (
 				42B40EC22A1901BD0066A296 /* HomeScreen+ViewModel.swift */,
 				42BCD7A72A19557A0065C3F0 /* PokemonDetailScreen+ViewModel.swift */,
+				427A25F92A1A166E00ED3C36 /* CodexScreen+ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,8 +359,10 @@
 				42B40ECC2A1939AE0066A296 /* PokedexResult.swift in Sources */,
 				42BCD7A82A19557A0065C3F0 /* PokemonDetailScreen+ViewModel.swift in Sources */,
 				42B40EB42A17FED10066A296 /* CodexScreen.swift in Sources */,
+				427A25FA2A1A166E00ED3C36 /* CodexScreen+ViewModel.swift in Sources */,
 				42B40EB62A17FEE80066A296 /* ProfileScreen.swift in Sources */,
 				42B40EC32A1901BD0066A296 /* HomeScreen+ViewModel.swift in Sources */,
+				427A25FC2A1A181E00ED3C36 /* ErrorHandler.swift in Sources */,
 				42B40ECA2A192F280066A296 /* PokemonDetailScreen.swift in Sources */,
 				42BCD7AC2A1967210065C3F0 /* Evolution.swift in Sources */,
 			);

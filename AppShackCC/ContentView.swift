@@ -16,10 +16,12 @@ struct ContentView: View {
             .tabItem {
                 Label("Home", systemImage: "house.fill")
             }
-            CodexScreen()
-                .tabItem {
-                    Label("Codex", systemImage: "books.vertical.fill")
-                }
+            NavigationStack {
+                CodexScreen()
+            }
+            .tabItem {
+                Label("Codex", systemImage: "books.vertical.fill")
+            }
             ProfileScreen()
                 .tabItem {
                     Label("My Profile", systemImage: "person.crop.circle.fill")
