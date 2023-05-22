@@ -10,19 +10,9 @@ import Foundation
 extension CodexScreen {
     @MainActor
     class ViewModel: ObservableObject {
-        @Published private(set) var listOfAllPokemon: [BaseNameURL]? = nil {
-            didSet {
-                setFilteredList()
-            }
-        }
+        @Published private(set) var listOfAllPokemon: [BaseNameURL]? = nil
         
-        @Published private(set) var filteredListOfPokemon: [BaseNameURL] = []
-        
-        @Published var searchableText: String = "" {
-            didSet {
-                setFilteredList()
-            }
-        }
+        @Published var searchableText: String = ""
         
         @Published var selectedPokemon: Pokemon?
         
@@ -38,15 +28,14 @@ extension CodexScreen {
             listOfAllPokemon == nil
         }
         
-        func setFilteredList() -> Void {
+        var filteredListOfPokemon: [BaseNameURL] {
             guard let listOfAllPokemon else {
-                filteredListOfPokemon = []
-                return
+                return []
             }
             if searchableText.isEmpty {
-                filteredListOfPokemon = listOfAllPokemon
+                return listOfAllPokemon
             } else {
-                filteredListOfPokemon = listOfAllPokemon.filter{ $0.name.lowercased().contains(searchableText.lowercased()) }
+                return listOfAllPokemon.filter{ $0.name.lowercased().contains(searchableText.lowercased()) }
             }
         }
         
